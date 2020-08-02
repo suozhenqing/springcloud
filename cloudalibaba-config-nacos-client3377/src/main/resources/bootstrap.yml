@@ -1,0 +1,18 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: TEST_GROUP
+        namespace: a93df272-e499-402b-a904-e579c6ffe75f
+
+#${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# nacos-config-client-dev.yaml

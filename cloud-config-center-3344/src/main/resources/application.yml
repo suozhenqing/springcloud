@@ -1,0 +1,33 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/suozhenqing/springcloud-config.git
+          username: 826560534@qq.com
+          password: '*szq813101*'
+          search-paths:
+             - springcloud-config
+      lable: master
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
